@@ -7,7 +7,7 @@ Person_Ext(actorB, "Secondary user", "Uses the existing system")
 
 Enterprise_Boundary(entBoundary, "Nykredit") {
   Person(actorA, "Primary user", "Uses the system in focus")
-  System(systemA, "System in focus", "Description\nwith details")
+  System(systemA, "System in focus", "Description\nwith details", $link="https://www.nykredit.dk")
   SystemDb(systemDb, "DB for system in focus", "Logical description of persisted entities")
 }
 Boundary(custBoundary, "Some boundary", "Custom logical division") {
