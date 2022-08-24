@@ -1,0 +1,12 @@
+@startuml Basic Sample
+!include ../C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+Enterprise_Boundary(b1, "Enterprise"){
+    System_Boundary(b2, "System") {
+        Container_Boundary(b3, "Container") {
+        }
+    }
+}
+@enduml
