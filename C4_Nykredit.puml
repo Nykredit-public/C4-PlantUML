@@ -31,11 +31,11 @@ skinparam rectangle<<boundary>> {
 
 ' Add a tag to a (possibly empty) list of tags
 !function $nkAddTag($tag, $tags="")
-    !if ($tags == "")
-        !return $tag
-    !else
-        !return = $tags + '+' + $tag
+    !$result = $tag
+    !if ($tags != "")
+        !$result = $tags + '+' + $tag
     !endif
+    !return !$result
 !endfunction
 
 ' Container_Boundary: solid thick container-colored border
