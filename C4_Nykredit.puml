@@ -45,7 +45,13 @@ skinparam rectangle<<nk_container_boundary>> {
 }
 AddElementTag("nk_container_boundary", $borderColor=$NK_CONTAINER_COLOR)
 !unquoted procedure Container_Boundary($alias, $label, $tags="", $link="")
-    Boundary($alias, $label, "Container", $nkAddTag("nk_container", $tags), $link)
+  !if ($tags != "")
+    !$allTags = $tags + '+nk_container'
+  !else
+    !$allTags = 'nk_container'
+  !endif
+  ' $type defined via $tag style
+  Boundary($alias, $label, "", $allTags, $link)
 !endprocedure
 
 ' Enterprise_Boundary: solid thick black border
