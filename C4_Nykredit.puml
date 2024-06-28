@@ -29,43 +29,14 @@ skinparam rectangle<<boundary>> {
     BorderThickness 3
 }
 
-' Add a tag to a (possibly empty) list of tags
-!function $nkAddTag($tag, $tags="")
-    !if ($tags == "")
-        !return $tag
-    !else
-        !return = $tags + '+' + $tag
-    !endif
-!endfunction
-
 ' Container_Boundary: solid thick container-colored border
-skinparam rectangle<<nk_container_boundary>> {
-    BorderStyle solid
-    BorderThickness 5
-}
-AddElementTag("nk_container_boundary", $borderColor=$NK_CONTAINER_COLOR)
-!unquoted procedure Container_Boundary($alias, $label, $tags="", $link="")
-    Boundary($alias, $label, "Container", $nkAddTag("nk_container", $tags), $link)
-!endprocedure
+AddBoundaryTag("container", $borderColor=$NK_CONTAINER_COLOR, $borderStyle=solid, $borderThickness=5)
 
-' Enterprise_Boundary: solid thick black border
-skinparam rectangle<<nk_enterprise_boundary>> {
-    BorderStyle solid
-}
-AddElementTag("nk_enterprise_boundary", $borderColor="#000000")
-!unquoted procedure Enterprise_Boundary($alias, $label, $tags="", $link="")
-    Boundary($alias, $label, "Enterprise", $nkAddTag("nk_enterprise", $tags), $link)
-!endprocedure
+' Enterprise_Boundary: solid black border
+AddBoundaryTag("enterprise", $borderColor=black, $borderStyle=solid)
 
 ' System_Boundary: solid thick system-colored border
-skinparam rectangle<<nk_system_boundary>> {
-    BorderStyle solid
-    BorderThickness 5
-}
-AddElementTag("nk_system_boundary", $borderColor=$NK_SYSTEM_COLOR)
-!unquoted procedure System_Boundary($alias, $label, $tags="", $link="")
-    Boundary($alias, $label, "System", $nkAddTag("nk_system", $tags), $link)
-!endprocedure
+AddBoundaryTag("system", $borderColor=$NK_SYSTEM_COLOR, $borderStyle=solid, $borderThickness=5)
 
 ' Define our custom legend
 !procedure LAYOUT_WITH_LEGEND()
