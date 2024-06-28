@@ -1,4 +1,4 @@
 ' We use Container instead of Context to make enterprise boundaries look right
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/v2.4.0/C4_Container.puml
 !global $NK_DIAGRAM_TYPE = "context"
-!include https://raw.githubusercontent.com/Nykredit//C4-PlantUML/boundary_issue/C4_Nykredit.puml
+!include https://raw.githubusercontent.com/Nykredit///C4-PlantUML/production/C4_Nykredit.puml
